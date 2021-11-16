@@ -15,12 +15,12 @@ jobs:
     - name: apt update
       run: sudo apt-get update
     - uses: actions/checkout@v2
+    - name: Get Scan Image
+      run: sudo apt-get install sane-utils
     - name: Setup requirements
       run: make setup-dev-environment
     - name: Initial setup
       run: ./manage.py initialsetup
-    - name: Get Scan Image
-      run: apt-get install sane-utils
     - name: Run tests with coverage
       run: make coverage-run
     - name: Generate coverage report
