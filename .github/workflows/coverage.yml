@@ -19,6 +19,8 @@ jobs:
       run: make setup-dev-environment
     - name: Initial setup
       run: ./manage.py initialsetup
+    - name: Get Scan Image
+      run: apt-get install sane-utils
     - name: Run tests with coverage
       run: make coverage-run
     - name: Generate coverage report
